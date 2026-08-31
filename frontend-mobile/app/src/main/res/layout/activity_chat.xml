@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    tools:context=".ChatActivity">
+
+    <!-- Cabecera del asistente: mismo bloque oscuro que el dashboard, continuo
+         con la barra de estado, para reforzar la identidad de producto clínico. -->
+    <TextView
+        android:id="@+id/headerChat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/color_surface_dark"
+        android:fontFamily="sans-serif-medium"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="18dp"
+        android:text="@string/chat_titulo"
+        android:textColor="@color/color_on_primary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Lista de mensajes: ocupa el espacio entre la cabecera y la barra de
+         entrada inferior (altura 0dp + constraints). -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerChat"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingVertical="8dp"
+        app:layout_constraintTop_toBottomOf="@id/headerChat"
+        app:layout_constraintBottom_toTopOf="@id/scrollSugerencias"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_chat_ai" />
+
+    <!-- Sugerencias de arranque. Se desplazan en horizontal en lugar de saltar a
+         una segunda linea: asi la altura de la pantalla no cambia al abrirla.
+         El controlador las oculta en cuanto el paciente envia su primer mensaje,
+         porque a partir de ahi estorban mas de lo que ayudan. -->
+    <HorizontalScrollView
+        android:id="@+id/scrollSugerencias"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/color_background"
+        android:paddingHorizontal="12dp"
+        android:paddingBottom="4dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/barraEntrada"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/grupoSugerencias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleLine="true"
+            app:chipSpacingHorizontal="8dp">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCitas"
+                style="@style/Widget.MaterialComponents.Chip.Action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chat_sugerencia_citas"
+                android:textColor="@color/color_primary"
+                app:chipBackgroundColor="@color/color_surface"
+                app:chipStrokeColor="@color/color_primary"
+                app:chipStrokeWidth="1dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipPedir"
+                style="@style/Widget.MaterialComponents.Chip.Action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chat_sugerencia_pedir"
+                android:textColor="@color/color_primary"
+                app:chipBackgroundColor="@color/color_surface"
+                app:chipStrokeColor="@color/color_primary"
+                app:chipStrokeWidth="1dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCancelar"
+                style="@style/Widget.MaterialComponents.Chip.Action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chat_sugerencia_cancelar"
+                android:textColor="@color/color_primary"
+                app:chipBackgroundColor="@color/color_surface"
+                app:chipStrokeColor="@color/color_primary"
+                app:chipStrokeWidth="1dp" />
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <!-- Barra inferior de entrada: campo de texto + botón de envío. -->
+    <LinearLayout
+        android:id="@+id/barraEntrada"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/color_surface"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/editMensaje"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="@string/chat_input_hint"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLines="4"
+            android:minHeight="48dp"
+            android:textColor="@color/color_text_primary"
+            android:textColorHint="@color/color_text_secondary"
+            android:textSize="16sp"
+            android:importantForAutofill="no" />
+
+        <ImageButton
+            android:id="@+id/buttonEnviar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/chat_enviar_desc"
+            android:src="@android:drawable/ic_menu_send"
+            app:tint="@color/color_primary" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

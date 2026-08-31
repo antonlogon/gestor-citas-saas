@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1010" viewBox="0 0 1600 1010" font-family="Helvetica,Arial,sans-serif">
+<rect width="1600" height="1010" fill="#ffffff"/>
+<defs><marker id="f" markerWidth="11" markerHeight="11" refX="9" refY="4" orient="auto"><path d="M0,0 L9,4 L0,8" fill="none" stroke="#115e6d" stroke-width="1.6"/></marker><marker id="g" markerWidth="16" markerHeight="16" refX="14" refY="6" orient="auto"><path d="M1,1 L14,6 L1,11 Z" fill="#ffffff" stroke="#475569" stroke-width="1.6"/></marker></defs>
+<rect x="285" y="48" width="1015" height="920" rx="10" fill="none" stroke="#115e6d" stroke-width="2.5"/>
+<text x="792" y="86" text-anchor="middle" font-size="23" font-weight="bold" fill="#115e6d">NexaCita</text>
+<circle cx="85" cy="129" r="17" fill="none" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="85" y1="146" x2="85" y2="187" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="61" y1="161" x2="109" y2="161" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="85" y1="187" x2="66" y2="219" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="85" y1="187" x2="104" y2="219" stroke="#115e6d" stroke-width="2.5"/>
+<text x="85" y="243" text-anchor="middle" font-size="20" font-weight="bold" fill="#0f172a">Visitante</text>
+<text x="85" y="265" text-anchor="middle" font-size="16" fill="#475569">(sin sesión)</text>
+<circle cx="85" cy="384" r="17" fill="none" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="85" y1="401" x2="85" y2="442" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="61" y1="416" x2="109" y2="416" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="85" y1="442" x2="66" y2="474" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="85" y1="442" x2="104" y2="474" stroke="#115e6d" stroke-width="2.5"/>
+<text x="85" y="498" text-anchor="middle" font-size="20" font-weight="bold" fill="#0f172a">Paciente</text>
+<circle cx="85" cy="699" r="17" fill="none" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="85" y1="716" x2="85" y2="757" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="61" y1="731" x2="109" y2="731" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="85" y1="757" x2="66" y2="789" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="85" y1="757" x2="104" y2="789" stroke="#115e6d" stroke-width="2.5"/>
+<text x="85" y="813" text-anchor="middle" font-size="20" font-weight="bold" fill="#0f172a">Modelo de</text>
+<text x="85" y="835" text-anchor="middle" font-size="16" fill="#475569">lenguaje</text>
+<circle cx="1500" cy="129" r="17" fill="none" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="1500" y1="146" x2="1500" y2="187" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="1476" y1="161" x2="1524" y2="161" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="1500" y1="187" x2="1481" y2="219" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="1500" y1="187" x2="1519" y2="219" stroke="#115e6d" stroke-width="2.5"/>
+<text x="1500" y="243" text-anchor="middle" font-size="20" font-weight="bold" fill="#0f172a">Personal</text>
+<circle cx="1500" cy="409" r="17" fill="none" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="1500" y1="426" x2="1500" y2="467" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="1476" y1="441" x2="1524" y2="441" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="1500" y1="467" x2="1481" y2="499" stroke="#115e6d" stroke-width="2.5"/>
+<line x1="1500" y1="467" x2="1519" y2="499" stroke="#115e6d" stroke-width="2.5"/>
+<text x="1500" y="523" text-anchor="middle" font-size="20" font-weight="bold" fill="#0f172a">Administrador</text>
+<ellipse cx="470" cy="150" rx="122" ry="40" fill="#eaf4f1" stroke="#115e6d" stroke-width="2"/>
+<text x="470" y="156" text-anchor="middle" font-size="18" fill="#0f172a">Registrar clínica</text>
+<ellipse cx="470" cy="255" rx="122" ry="40" fill="#eaf4f1" stroke="#115e6d" stroke-width="2"/>
+<text x="470" y="261" text-anchor="middle" font-size="18" fill="#0f172a">Iniciar sesión</text>
+<ellipse cx="470" cy="385" rx="122" ry="40" fill="#eaf4f1" stroke="#115e6d" stroke-width="2"/>
+<text x="470" y="391" text-anchor="middle" font-size="18" fill="#0f172a">Consultar mis citas</text>
+<ellipse cx="470" cy="500" rx="122" ry="40" fill="#eaf4f1" stroke="#115e6d" stroke-width="2"/>
+<text x="470" y="496" text-anchor="middle" font-size="18" fill="#0f172a">Conversar con el</text>
+<text x="470" y="517" text-anchor="middle" font-size="18" fill="#0f172a">asistente</text>
+<ellipse cx="470" cy="615" rx="122" ry="40" fill="#eaf4f1" stroke="#115e6d" stroke-width="2"/>
+<text x="470" y="621" text-anchor="middle" font-size="18" fill="#0f172a">Reservar cita</text>
+<ellipse cx="1095" cy="150" rx="142" ry="40" fill="#eaf4f1" stroke="#115e6d" stroke-width="2"/>
+<text x="1095" y="156" text-anchor="middle" font-size="18" fill="#0f172a">Gestionar pacientes</text>
+<ellipse cx="1095" cy="260" rx="142" ry="40" fill="#eaf4f1" stroke="#115e6d" stroke-width="2"/>
+<text x="1095" y="266" text-anchor="middle" font-size="18" fill="#0f172a">Consultar indicadores</text>
+<ellipse cx="1095" cy="370" rx="142" ry="40" fill="#eaf4f1" stroke="#115e6d" stroke-width="2"/>
+<text x="1095" y="366" text-anchor="middle" font-size="18" fill="#0f172a">Gestionar catálogo</text>
+<text x="1095" y="387" text-anchor="middle" font-size="18" fill="#0f172a">de servicios</text>
+<ellipse cx="1095" cy="480" rx="142" ry="40" fill="#eaf4f1" stroke="#115e6d" stroke-width="2"/>
+<text x="1095" y="476" text-anchor="middle" font-size="18" fill="#0f172a">Gestionar personal</text>
+<text x="1095" y="497" text-anchor="middle" font-size="18" fill="#0f172a">del centro</text>
+<ellipse cx="1095" cy="590" rx="142" ry="40" fill="#eaf4f1" stroke="#115e6d" stroke-width="2"/>
+<text x="1095" y="596" text-anchor="middle" font-size="18" fill="#0f172a">Administrar la clínica</text>
+<ellipse cx="1095" cy="700" rx="142" ry="40" fill="#eaf4f1" stroke="#115e6d" stroke-width="2"/>
+<text x="1095" y="706" text-anchor="middle" font-size="18" fill="#0f172a">Gestionar agenda</text>
+<ellipse cx="790" cy="855" rx="185" ry="40" fill="#eaf4f1" stroke="#115e6d" stroke-width="2"/>
+<text x="790" y="851" text-anchor="middle" font-size="18" fill="#0f172a">Validar invariantes</text>
+<text x="790" y="872" text-anchor="middle" font-size="18" fill="#0f172a">de la agenda</text>
+<line x1="120" y1="150" x2="348" y2="150" stroke="#475569" stroke-width="1.6"/>
+<line x1="120" y1="165" x2="350" y2="250" stroke="#475569" stroke-width="1.6"/>
+<line x1="120" y1="405" x2="352" y2="270" stroke="#475569" stroke-width="1.6"/>
+<line x1="120" y1="415" x2="350" y2="382" stroke="#475569" stroke-width="1.6"/>
+<line x1="120" y1="425" x2="352" y2="495" stroke="#475569" stroke-width="1.6"/>
+<line x1="120" y1="440" x2="352" y2="608" stroke="#475569" stroke-width="1.6"/>
+<line x1="120" y1="720" x2="350" y2="512" stroke="#475569" stroke-width="1.6"/>
+<line x1="1465" y1="168" x2="1240" y2="150" stroke="#475569" stroke-width="1.6"/>
+<line x1="1465" y1="168" x2="1240" y2="260" stroke="#475569" stroke-width="1.6"/>
+<line x1="1465" y1="168" x2="1240" y2="700" stroke="#475569" stroke-width="1.6"/>
+<line x1="1465" y1="448" x2="1240" y2="370" stroke="#475569" stroke-width="1.6"/>
+<line x1="1465" y1="448" x2="1240" y2="480" stroke="#475569" stroke-width="1.6"/>
+<line x1="1465" y1="448" x2="1240" y2="590" stroke="#475569" stroke-width="1.6"/>
+<line x1="1500" y1="385" x2="1500" y2="262" stroke="#475569" stroke-width="1.6" marker-end="url(#g)"/>
+<line x1="592" y1="512" x2="640" y2="826" stroke="#115e6d" stroke-width="1.6" stroke-dasharray="7 5" marker-end="url(#f)"/>
+<text x="585" y="700" text-anchor="middle" font-size="15" font-style="italic" fill="#115e6d">&#171;include&#187;</text>
+<line x1="590" y1="632" x2="660" y2="828" stroke="#115e6d" stroke-width="1.6" stroke-dasharray="7 5" marker-end="url(#f)"/>
+<text x="700" y="760" text-anchor="middle" font-size="15" font-style="italic" fill="#115e6d">&#171;include&#187;</text>
+<line x1="962" y1="722" x2="900" y2="828" stroke="#115e6d" stroke-width="1.6" stroke-dasharray="7 5" marker-end="url(#f)"/>
+<text x="985" y="800" text-anchor="middle" font-size="15" font-style="italic" fill="#115e6d">&#171;include&#187;</text>
+<text x="792" y="990" text-anchor="middle" font-size="16" fill="#475569">El Administrador hereda todas las capacidades del Personal. El asistente opera siempre en nombre del paciente y con sus mismos permisos.</text>
+</svg>

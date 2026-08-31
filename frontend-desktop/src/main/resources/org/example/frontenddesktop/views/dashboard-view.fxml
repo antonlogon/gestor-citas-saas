@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<BorderPane styleClass="dashboard-root" prefHeight="760.0" prefWidth="1200.0"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.frontenddesktop.controllers.DashboardController">
+
+    <!-- ============================ Sidebar ============================ -->
+    <left>
+        <VBox styleClass="sidebar" spacing="10.0" prefWidth="248.0">
+            <padding>
+                <Insets top="22.0" right="16.0" bottom="22.0" left="16.0"/>
+            </padding>
+
+            <!-- Grupo de navegación: garantiza que solo un botón esté activo. -->
+            <fx:define>
+                <ToggleGroup fx:id="navGroup"/>
+            </fx:define>
+
+            <!-- Bloque de marca -->
+            <HBox styleClass="brand-block" spacing="12.0" alignment="CENTER_LEFT">
+                <SVGPath styleClass="brand-mark"
+                         content="M21 11h-5l-2 5-4-10-2 5H3"/>
+                <Label styleClass="brand-label" text="NexaCita"/>
+            </HBox>
+
+            <!-- Bloque de usuario: avatar con iniciales + email + rol -->
+            <HBox styleClass="user-block" spacing="12.0" alignment="CENTER_LEFT">
+                <Label fx:id="avatarLabel" styleClass="avatar" text="?"/>
+                <VBox spacing="1.0">
+                    <Label fx:id="userLabel" styleClass="user-name" text="usuario"/>
+                    <Label fx:id="roleLabel" styleClass="user-role" text="—"/>
+                </VBox>
+            </HBox>
+
+            <Region minHeight="10.0"/>
+
+            <!-- Navegación (ToggleButton + ToggleGroup, estado :selected visible) -->
+            <ToggleButton fx:id="navCitas" styleClass="nav-toggle" toggleGroup="$navGroup"
+                          maxWidth="Infinity" text="Citas" onAction="#showCitas">
+                <graphic>
+                    <SVGPath styleClass="nav-icon"
+                             content="M2 4H16V16H2Z M2 7H16 M6 2V5 M12 2V5"/>
+                </graphic>
+            </ToggleButton>
+
+            <ToggleButton fx:id="navPacientes" styleClass="nav-toggle" toggleGroup="$navGroup"
+                          maxWidth="Infinity" text="Pacientes" onAction="#showPacientes">
+                <graphic>
+                    <SVGPath styleClass="nav-icon"
+                             content="M9 9a3 3 0 100-6 3 3 0 000 6z M3.5 16c0-3 2.5-4.5 5.5-4.5s5.5 1.5 5.5 4.5"/>
+                </graphic>
+            </ToggleButton>
+
+            <ToggleButton fx:id="navServicios" styleClass="nav-toggle" toggleGroup="$navGroup"
+                          maxWidth="Infinity" text="Servicios" onAction="#showServicios">
+                <graphic>
+                    <SVGPath styleClass="nav-icon"
+                             content="M4 4H14V17H4Z M6 2H12V5H6Z M6 9H12 M6 12H11"/>
+                </graphic>
+            </ToggleButton>
+
+            <!-- Empuja el logout discreto al fondo -->
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button styleClass="logout-link" maxWidth="Infinity" text="Cerrar sesión"
+                    onAction="#onLogout">
+                <graphic>
+                    <SVGPath styleClass="nav-icon"
+                             content="M7 3H4C3.4 3 3 3.4 3 4V15C3 15.6 3.4 16 4 16H7 M11 12L14 9L11 6 M14 9H6"/>
+                </graphic>
+            </Button>
+        </VBox>
+    </left>
+
+    <!-- ========================= Contenido ========================= -->
+    <center>
+        <VBox styleClass="content-root" spacing="18.0">
+            <padding>
+                <Insets top="24.0" right="32.0" bottom="24.0" left="32.0"/>
+            </padding>
+
+            <!-- Cabecera: título + subtítulo (fecha de hoy) a la izquierda,
+                 zona de acciones a la derecha. -->
+            <HBox styleClass="content-header" alignment="CENTER_LEFT" spacing="16.0">
+                <VBox spacing="2.0">
+                    <Label fx:id="sectionTitle" styleClass="section-title" text="Citas"/>
+                    <Label fx:id="sectionSubtitle" styleClass="section-subtitle" text=""/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <!-- Zona de acciones contextuales (reservada para el futuro). -->
+                <HBox fx:id="headerActions" styleClass="header-actions" spacing="8.0"
+                      alignment="CENTER_RIGHT"/>
+            </HBox>
+
+            <StackPane fx:id="contentArea" styleClass="content-area" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </center>
+</BorderPane>

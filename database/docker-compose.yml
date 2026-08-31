@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  mysql-db:
+    image: mysql:8.0
+    platform: linux/arm64  # Obligatorio para rendimiento nativo en Apple Silicon
+    container_name: citas_mysql
+    environment:
+      # Externalizado: se puede sobrescribir con un fichero database/.env.
+      # Si no se define, mantiene el valor de desarrollo actual (root).
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}  # Contraseña maestra
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-gestor_citas_saas}
+    ports:
+      - "3307:3306" # Mapeo del puerto para que Java y Python puedan conectarse
+    # Sin script de init: la BD vacía la crea la propia imagen a partir de
+    # MYSQL_DATABASE. El esquema lo gestiona Alembic (alembic upgrade head),
+    # no un init.sql (que quedaba desincronizado con los modelos).
+    restart: always

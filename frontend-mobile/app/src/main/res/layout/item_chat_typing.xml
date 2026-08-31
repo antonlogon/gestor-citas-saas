@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fila del indicador "escribiendo…": una burbuja de IA (alineada a la
+     izquierda) que contiene tres puntos animados por el TypingViewHolder. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="4dp">
+
+    <!-- clipToPadding="false": los puntos se animan con translationY hacia
+         ARRIBA y entran en la zona del padding superior. Con el valor por
+         defecto (true) el ViewGroup recorta el dibujado de sus hijos al área de
+         contenido, es decir excluyendo el padding, y los puntos aparecían
+         cortados en lo alto del rebote. clipChildren="false" es la salvaguarda
+         equivalente por si en el futuro la amplitud supera el padding (14dp).
+         Ojo: si se aumenta la amplitud en TypingViewHolder, hay que subir
+         también este padding o el recorte volverá. -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/bg_bubble_ai"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="14dp">
+
+        <View
+            android:id="@+id/dot1"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/dot_typing" />
+
+        <View
+            android:id="@+id/dot2"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/dot_typing" />
+
+        <View
+            android:id="@+id/dot3"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@drawable/dot_typing" />
+    </LinearLayout>
+</LinearLayout>

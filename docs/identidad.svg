@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="560" viewBox="0 0 1400 560" font-family="Helvetica,Arial,sans-serif"><rect width="1400" height="560" fill="#ffffff"/>
+<rect x="60" y="40" width="600" height="180" rx="12" fill="#0d5c6e"/>
+<g transform="translate(88.0,96.0) scale(4.0)"><path d="M21 11h-5l-2 5-4-10-2 5H3" fill="none" stroke="#ffffff" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="210" y="146" font-size="48" font-weight="bold" fill="#ffffff">NexaCita</text>
+<rect x="740" y="40" width="600" height="180" rx="12" fill="#ffffff" stroke="#d8e0e6" stroke-width="1.5"/>
+<g transform="translate(768.0,96.0) scale(4.0)"><path d="M21 11h-5l-2 5-4-10-2 5H3" fill="none" stroke="#115e6d" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="890" y="146" font-size="48" font-weight="bold" fill="#115e6d">NexaCita</text>
+<text x="360" y="252" text-anchor="middle" font-size="18" fill="#475569">Versión principal, sobre fondo oscuro (barra lateral de la aplicación)</text>
+<text x="1040" y="252" text-anchor="middle" font-size="18" fill="#475569">Versión sobre fondo claro</text>
+<rect x="60" y="320" width="200" height="96" rx="8" fill="#115e6d" stroke="#d8e0e6" stroke-width="1"/>
+<text x="60" y="446" font-size="19" font-weight="bold" fill="#0f172a">Acento</text>
+<text x="60" y="470" font-size="17" fill="#475569" font-family="Consolas,Menlo,monospace">#115e6d</text>
+<text x="60" y="492" font-size="15" fill="#475569">Botones y elementos activos</text>
+<rect x="280" y="320" width="200" height="96" rx="8" fill="#0f172a" stroke="#d8e0e6" stroke-width="1"/>
+<text x="280" y="446" font-size="19" font-weight="bold" fill="#0f172a">Texto</text>
+<text x="280" y="470" font-size="17" fill="#475569" font-family="Consolas,Menlo,monospace">#0f172a</text>
+<text x="280" y="492" font-size="15" fill="#475569">Contenido principal</text>
+<rect x="500" y="320" width="200" height="96" rx="8" fill="#f5f7fa" stroke="#d8e0e6" stroke-width="1"/>
+<text x="500" y="446" font-size="19" font-weight="bold" fill="#0f172a">Fondo</text>
+<text x="500" y="470" font-size="17" fill="#475569" font-family="Consolas,Menlo,monospace">#f5f7fa</text>
+<text x="500" y="492" font-size="15" fill="#475569">Lienzo de la aplicación</text>
+<rect x="720" y="320" width="200" height="96" rx="8" fill="#14532d" stroke="#d8e0e6" stroke-width="1"/>
+<text x="720" y="446" font-size="19" font-weight="bold" fill="#0f172a">Confirmada</text>
+<text x="720" y="470" font-size="17" fill="#475569" font-family="Consolas,Menlo,monospace">#14532d</text>
+<text x="720" y="492" font-size="15" fill="#475569">Estado de cita</text>
+<rect x="940" y="320" width="200" height="96" rx="8" fill="#78350f" stroke="#d8e0e6" stroke-width="1"/>
+<text x="940" y="446" font-size="19" font-weight="bold" fill="#0f172a">Pendiente</text>
+<text x="940" y="470" font-size="17" fill="#475569" font-family="Consolas,Menlo,monospace">#78350f</text>
+<text x="940" y="492" font-size="15" fill="#475569">Estado de cita</text>
+<rect x="1160" y="320" width="200" height="96" rx="8" fill="#7f1d1d" stroke="#d8e0e6" stroke-width="1"/>
+<text x="1160" y="446" font-size="19" font-weight="bold" fill="#0f172a">Cancelada</text>
+<text x="1160" y="470" font-size="17" fill="#475569" font-family="Consolas,Menlo,monospace">#7f1d1d</text>
+<text x="1160" y="492" font-size="15" fill="#475569">Estado de cita</text>
+<text x="60" y="540" font-size="16" fill="#475569">Todos los colores están medidos para el nivel AAA de contraste; los ratios se detallan en el apartado 11.6.</text>
+</svg>

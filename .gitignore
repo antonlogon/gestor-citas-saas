@@ -1,0 +1,52 @@
+# Configuraciones específicas de IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Archivos del sistema operativo (Mac)
+.DS_Store
+
+# Carpetas de compilación y entornos que crearemos más adelante
+backend-api/venv/
+frontend-admin/target/
+frontend-movil/.gradle/
+frontend-movil/build/
+.claude
+
+# ==========================================
+# Secretos y variables de entorno
+# ==========================================
+.env
+.env.*
+!.env.example
+
+# ==========================================
+# Python (backend-api)
+# ==========================================
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# ==========================================
+# Java / Maven (frontend-desktop)
+# ==========================================
+target/
+
+# ==========================================
+# Android / Gradle / Kotlin (frontend-mobile)
+# ==========================================
+.gradle/
+build/
+local.properties
+.kotlin/
+
+# ==========================================
+# Logs y temporales
+# ==========================================
+*.log
+*.tmp
+docs/*_Defensa.*

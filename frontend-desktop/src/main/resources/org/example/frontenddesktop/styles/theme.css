@@ -1,0 +1,57 @@
+/* ==========================================================================
+   THEME.CSS · Sistema de diseño compartido
+   --------------------------------------------------------------------------
+   Define la paleta clínica como "looked-up colors" de JavaFX en .root, de modo
+   que login.css y dashboard.css la reutilicen (p. ej. -fx-background-color:
+   -color-primary;) en vez de repetir códigos hex. Este fichero debe añadirse
+   a TODAS las escenas antes que las hojas específicas.
+
+   Nota JavaFX: los looked-up colors declarados en .root son visibles para todos
+   los nodos descendientes de la escena. No existen variables CSS estándar
+   (var()/--x); este es el mecanismo equivalente.
+   ========================================================================== */
+
+.root {
+    /* Acento primario: azul-teal profesional (nada de saturación alta).
+       Se oscureció un peldaño para que el texto blanco sobre él llegue a AAA
+       (blanco sobre #115e6d = 7.38:1); afecta a los botones primarios. */
+    -color-primary:        #115e6d;   /* teal-cian oscuro (texto blanco: 7.38:1 AAA) */
+    -color-primary-hover:  #0a4a56;   /* :hover/:pressed, perceptiblemente más oscuro */
+    -color-primary-soft:   #ecfeff;   /* fondo muy suave para acentos */
+    -color-on-primary:     #ffffff;   /* texto sobre el acento */
+
+    /* Superficies y fondos (muy claros). */
+    -color-bg:             #f5f7fa;   /* fondo general de la app */
+    -color-surface:        #ffffff;   /* tarjetas, paneles, tabla */
+    -color-surface-alt:    #f8fafc;   /* franjas/cabeceras sutiles */
+
+    /* Texto. Nada de negro puro: azulado oscuro + gris azulado secundario.
+       Ratios pensados para WCAG AAA (7:1) sobre blanco y sobre el fondo de app. */
+    -color-text:           #0f172a;   /* principal (17.85:1 sobre blanco, máximo alcanzable) */
+    -color-text-secondary: #475569;   /* secundario (7.58:1 sobre blanco, 7.06:1 sobre -color-bg) */
+    /* RESTRICCIÓN: -color-text-muted da 4.76:1 SOLO sobre blanco (#ffffff), lo
+       que NO es AAA. Úsalo únicamente sobre superficies blancas y para texto no
+       crítico (prompts, detalle de placeholders). NUNCA sobre -color-bg (#f5f7fa,
+       baja a 4.43:1) ni en texto importante: para eso usa -color-text-secondary. */
+    -color-text-muted:     #64748b;   /* tenue, ver restricción arriba */
+
+    /* Bordes suaves. */
+    -color-border:         #e2e8f0;
+    -color-border-strong:  #cbd5e1;
+
+    /* Estados semánticos + su fondo suave para badges. Los tonos de texto se
+       oscurecieron para alcanzar AAA sobre su fondo suave (y sobre blanco). */
+    -color-success:        #14532d;   /* 8.30:1 sobre -color-success-soft */
+    -color-success-soft:   #dcfce7;
+    -color-warning:        #78350f;   /* 8.15:1 sobre -color-warning-soft */
+    -color-warning-soft:   #fef3c7;
+    -color-danger:         #7f1d1d;   /* 8.20:1 sobre -color-danger-soft; y >8:1 sobre blanco */
+    -color-danger-soft:    #fee2e2;
+
+    /* Tipografía base: dejamos la fuente del sistema por defecto de JavaFX (San
+       Francisco en macOS, Segoe UI en Windows), mejor hinteada a tamaños
+       pequeños que Helvetica Neue —cuyos trazos finos hacían parecer gris el
+       texto casi negro—. No forzamos -fx-font-family. */
+    -fx-font-size: 14px;
+    -fx-text-fill: -color-text;
+}

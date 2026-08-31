@@ -1,0 +1,123 @@
+/* ==========================================================================
+   LOGIN.CSS · Pantalla de acceso (panel dividido)
+   Reutiliza los looked-up colors de theme.css (añadir theme.css a la escena
+   ANTES que esta hoja).
+   ========================================================================== */
+
+.login-split {
+    -fx-background-color: -color-bg;
+}
+
+/* ----------------------------------------------- Panel de marca (izda) ---- */
+.brand-panel {
+    /* Degradado diagonal teal, oscurecido lo justo para que el texto blanco
+       sólido llegue a AAA en TODO el panel: el extremo más claro (#0d5c6e) da
+       7.57:1 con blanco. Ends fijos aquí (no -color-primary) para no acoplar la
+       identidad del login al acento de los botones. */
+    -fx-background-color: linear-gradient(to bottom right, #0d5c6e, #062a32);
+}
+
+.brand-icon {
+    -fx-fill: transparent;
+    -fx-stroke: white;
+    -fx-stroke-width: 3;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+}
+
+.brand-title {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.brand-claim {
+    -fx-font-size: 15px;
+    -fx-text-fill: white;   /* blanco sólido, sin opacidad (>=7.57:1 en todo el panel) */
+    -fx-line-spacing: 3;
+}
+
+.brand-footer {
+    -fx-font-size: 12px;
+    -fx-text-fill: white;   /* blanco sólido, sin opacidad */
+}
+
+/* ---------------------------------------------- Lado del formulario ------- */
+.form-side {
+    -fx-background-color: -color-bg;
+}
+
+.login-card {
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1;
+    /* JavaFX no tiene box-shadow: usamos un dropshadow suave. */
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.10), 24, 0, 0, 8);
+}
+
+.card-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-text;
+}
+
+.card-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-text-secondary;
+}
+
+/* Etiqueta encima de cada campo. */
+.field-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-text-secondary;
+}
+
+/* Campos con altura cómoda. */
+.text-field, .password-field {
+    -fx-font-size: 14px;
+    -fx-padding: 11 12;
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: -color-border-strong;
+    -fx-border-width: 1;
+    -fx-prompt-text-fill: -color-text-muted;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: -color-primary;
+    /* Halo de foco sutil (rgba del nuevo acento #115e6d), no el anillo de Modena. */
+    -fx-effect: dropshadow(gaussian, rgba(17, 94, 109, 0.28), 6, 0, 0, 0);
+}
+
+.login-button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-on-primary;
+    -fx-background-color: -color-primary;
+    -fx-background-radius: 8;
+    -fx-padding: 12;
+    -fx-cursor: hand;
+}
+
+.login-button:hover {
+    -fx-background-color: -color-primary-hover;
+}
+
+.login-button:disabled {
+    -fx-opacity: 0.6;
+}
+
+/* Área de mensaje: rojo por defecto (error), verde en éxito. La altura se
+   reserva desde el FXML (minHeight) para que no descoloque el formulario. */
+.message-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-danger;
+}
+
+.message-label.success {
+    -fx-text-fill: -color-success;
+}

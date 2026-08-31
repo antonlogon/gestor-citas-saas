@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<!-- Login a panel dividido: izquierda bloque de marca; derecha tarjeta con el
+     formulario. La maquetación es un HBox (no hay flexbox en JavaFX). -->
+<HBox styleClass="login-split" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.frontenddesktop.controllers.LoginController">
+
+    <!-- ===================== Panel de marca (izquierda) ===================== -->
+    <VBox styleClass="brand-panel" prefWidth="380.0" spacing="20.0"
+          alignment="CENTER_LEFT">
+        <padding>
+            <Insets top="56.0" right="44.0" bottom="56.0" left="44.0"/>
+        </padding>
+
+        <!-- Icono de marca (SVGPath inline, estilo Lucide "activity"). Las
+             coordenadas ya están a tamaño final (~58px): así el nodo ocupa su
+             espacio real en el layout, sin transformaciones que no lo afectan. -->
+        <SVGPath styleClass="brand-icon"
+                 content="M52.8 28.8h-14.4l-4.8 12-9.6-24-4.8 12H4.8"/>
+
+        <Region minHeight="8.0"/>
+
+        <Label styleClass="brand-title" text="NexaCita" wrapText="true"/>
+        <Label styleClass="brand-claim" wrapText="true"
+               text="La agenda clínica de tu equipo: pacientes, profesionales y servicios en un mismo lugar."/>
+
+        <!-- Empuja una firma discreta al fondo del panel. -->
+        <Region VBox.vgrow="ALWAYS"/>
+        <Label styleClass="brand-footer" text="Software de gestión para clínicas médicas"
+               wrapText="true"/>
+    </VBox>
+
+    <!-- ===================== Lado del formulario (derecha) ================== -->
+    <StackPane styleClass="form-side" HBox.hgrow="ALWAYS">
+        <padding>
+            <Insets top="40.0" right="40.0" bottom="40.0" left="40.0"/>
+        </padding>
+
+        <VBox styleClass="login-card" spacing="18.0" maxWidth="360.0"
+              maxHeight="-Infinity" alignment="TOP_LEFT">
+            <padding>
+                <Insets top="36.0" right="36.0" bottom="36.0" left="36.0"/>
+            </padding>
+
+            <Label styleClass="card-title" text="Bienvenido de nuevo"/>
+            <Label styleClass="card-subtitle" wrapText="true"
+                   text="Introduce tus credenciales para acceder al panel."/>
+
+            <Region minHeight="4.0"/>
+
+            <!-- Grupo Usuario: label encima del campo. -->
+            <VBox spacing="6.0">
+                <Label styleClass="field-label" text="Usuario"/>
+                <TextField fx:id="usernameField" promptText="tu@clinica.com"
+                           maxWidth="Infinity" onAction="#onLogin"/>
+            </VBox>
+
+            <!-- Grupo Contraseña. -->
+            <VBox spacing="6.0">
+                <Label styleClass="field-label" text="Contraseña"/>
+                <PasswordField fx:id="passwordField" promptText="••••••••"
+                               maxWidth="Infinity" onAction="#onLogin"/>
+            </VBox>
+
+            <Button fx:id="loginButton" defaultButton="true" maxWidth="Infinity"
+                    styleClass="login-button" text="Iniciar sesión" onAction="#onLogin"/>
+
+            <!-- Área de mensaje con altura reservada (minHeight) para que al
+                 aparecer un error no se descoloque el resto del formulario. -->
+            <Label fx:id="messageLabel" styleClass="message-label" wrapText="true"
+                   maxWidth="Infinity" minHeight="34.0"/>
+        </VBox>
+    </StackPane>
+</HBox>

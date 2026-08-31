@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Tema MaterialComponents (NO Material3, NO Compose): necesario para
+         widgets como el FloatingActionButton. Mapeamos el sistema de diseño
+         clínico tanto a los atributos de Material (colorPrimary/colorSecondary)
+         como a los del framework (android:colorPrimary/Accent) para que también
+         se estilen los widgets nativos de la pantalla de Login.
+
+         Variante .Light (no DayNight): la app es solo clara, en coherencia con
+         el escritorio. Además, forceDarkAllowed=false impide que el "modo oscuro
+         forzado" del sistema reinterprete los colores si el dispositivo está en
+         oscuro. -->
+    <style name="Theme.AppClinica" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryVariant">@color/color_primary_pressed</item>
+        <item name="colorOnPrimary">@color/color_on_primary</item>
+        <item name="colorSecondary">@color/color_primary</item>
+        <item name="colorSecondaryVariant">@color/color_primary_pressed</item>
+        <item name="colorOnSecondary">@color/color_on_primary</item>
+
+        <item name="android:colorPrimary">@color/color_primary</item>
+        <item name="android:colorAccent">@color/color_primary</item>
+        <item name="android:windowBackground">@color/color_background</item>
+        <item name="android:statusBarColor">@color/color_surface_dark</item>
+        <item name="android:textColorPrimary">@color/color_text_primary</item>
+
+        <!-- Blindaje del tema claro frente al modo oscuro del sistema (API 29+). -->
+        <item name="android:forceDarkAllowed" tools:targetApi="29">false</item>
+    </style>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fila de mensaje de la IA. El contenedor ocupa el ancho completo y la
+     burbuja se alinea a la izquierda (layout_gravity="start"). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="4dp">
+
+    <TextView
+        android:id="@+id/textMensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/bg_bubble_ai"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/color_text_primary"
+        android:textSize="16sp"
+        tools:text="Claro, ¿para qué especialidad y a qué hora te viene bien?"
+        xmlns:tools="http://schemas.android.com/tools" />
+</LinearLayout>

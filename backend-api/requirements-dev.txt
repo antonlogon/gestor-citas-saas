@@ -1,0 +1,11 @@
+# Dependencias SOLO de desarrollo/tests. No se instalan en producción: así la
+# imagen/entorno de la API no carga con utilidades de test.
+#
+# Uso:
+#   pip install -r requirements.txt -r requirements-dev.txt
+#
+# Los tests atacan un ESQUEMA APARTE (gestor_citas_saas_test) del mismo
+# contenedor MySQL; ver tests/conftest.py y la sección de tests del README.
+
+pytest==8.4.2
+httpx==0.28.1   # requerido por el TestClient de FastAPI/Starlette

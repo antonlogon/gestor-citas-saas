@@ -1,0 +1,517 @@
+/* ==========================================================================
+   DASHBOARD.CSS · Panel principal (sidebar + contenido + citas)
+   Reutiliza los looked-up colors definidos en theme.css (añadir theme.css a la
+   escena ANTES que esta hoja).
+   ========================================================================== */
+
+.dashboard-root {
+    -fx-background-color: -color-bg;
+}
+
+/* ============================== Sidebar ================================== */
+.sidebar {
+    -fx-background-color: #0b3a44;   /* teal muy oscuro, familia del acento */
+}
+
+.brand-block {
+    -fx-padding: 4 4 8 4;
+}
+
+.brand-mark {
+    -fx-fill: transparent;
+    -fx-stroke: white;
+    -fx-stroke-width: 2;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+}
+
+.brand-label {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/* Bloque de usuario: avatar con iniciales + email + rol */
+.user-block {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 12;
+    -fx-padding: 12;
+}
+
+.avatar {
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+    -fx-pref-width: 40;
+    -fx-pref-height: 40;
+    -fx-max-width: 40;
+    -fx-max-height: 40;
+    -fx-background-color: -color-primary;
+    -fx-background-radius: 999;
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.user-name {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.user-role {
+    -fx-font-size: 11px;
+    -fx-text-fill: #c3d4d9;   /* 8.07:1 sobre el sidebar #0b3a44 (antes rgba 0.6, ~4.33:1) */
+}
+
+/* Navegación: ToggleButton con estado activo (:selected) visible */
+.nav-toggle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #e5eef0;
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-padding: 10 14;
+    -fx-alignment: CENTER_LEFT;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
+}
+
+.nav-toggle:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+}
+
+.nav-toggle:selected {
+    -fx-background-color: rgba(255, 255, 255, 0.14);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.nav-icon {
+    -fx-fill: transparent;
+    -fx-stroke: #cfe0e4;
+    -fx-stroke-width: 1.6;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+}
+
+.nav-toggle:selected .nav-icon {
+    -fx-stroke: white;
+}
+
+/* Logout discreto (enlace), no un botón rojo grande */
+.logout-link {
+    -fx-font-size: 13px;
+    -fx-text-fill: #c3d4d9;   /* 8.07:1 sobre #0b3a44; enlace discreto pero legible (antes #9fb6bd, 5.81:1) */
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-padding: 10 14;
+    -fx-alignment: CENTER_LEFT;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
+}
+
+.logout-link:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-text-fill: white;
+}
+
+/* ============================ Contenido ================================= */
+.content-root {
+    -fx-background-color: transparent;
+}
+
+.section-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-text;
+}
+
+.section-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-text-secondary;
+}
+
+/* La zona de contenido ya no es una tarjeta: cada vista aporta sus superficies. */
+.content-area {
+    -fx-background-color: transparent;
+}
+
+.citas-root {
+    -fx-padding: 0;
+}
+
+/* ============================== KPIs ==================================== */
+/* Tarjeta con número grande, etiqueta pequeña y un acento de color a la
+   izquierda (franja de 4px lograda con dos capas de fondo e insets). */
+.kpi-card {
+    -fx-background-color: -color-border-strong, -color-surface;
+    -fx-background-insets: 0, 0 0 0 4;
+    -fx-background-radius: 12;
+    -fx-border-color: -color-border;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-padding: 16 18;
+    -fx-spacing: 2;
+}
+
+/* El acento (primera capa de fondo) cambia por tipo de KPI. */
+.kpi-hoy        { -fx-background-color: -color-primary, -color-surface; }
+.kpi-pendientes { -fx-background-color: -color-warning, -color-surface; }
+.kpi-confirmadas{ -fx-background-color: -color-success, -color-surface; }
+.kpi-canceladas { -fx-background-color: -color-danger,  -color-surface; }
+
+/* --- Tarjetas de KPI clicables ---------------------------------------------
+   Al pulsar una, la tabla filtra por ese criterio. Se distinguen tres estados:
+   pulsable (cursor de mano), activa (borde de acento y fondo suave) y sin
+   resultados (atenuada y sin respuesta al clic, vía setDisable en el
+   controlador). El borde se declara SIEMPRE con el mismo ancho, cambiando solo
+   el color: en JavaFX el borde ocupa espacio dentro de la región, así que si
+   apareciera solo al activarse, la tarjeta encogería su contenido al pulsarla. */
+.kpi-card {
+    -fx-cursor: hand;
+}
+
+.kpi-card:hover {
+    -fx-border-color: -color-border-strong;
+}
+
+.kpi-card.kpi-activa {
+    -fx-border-color: -color-primary;
+    -fx-effect: dropshadow(gaussian, rgba(17, 94, 109, 0.18), 10, 0, 0, 2);
+}
+
+/* Sin resultados: no se puede filtrar por algo que no existe. */
+.kpi-card:disabled {
+    -fx-opacity: 0.45;
+    -fx-cursor: default;
+}
+
+.kpi-value {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-text;
+}
+
+.kpi-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-text-secondary;
+}
+
+/* =========================== Toolbar =================================== */
+.search-field {
+    -fx-font-size: 13px;
+    -fx-padding: 9 12;
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: -color-border-strong;
+    -fx-border-width: 1;
+    -fx-prompt-text-fill: -color-text-muted;
+}
+
+.search-field:focused {
+    -fx-border-color: -color-primary;
+}
+
+.filter-combo {
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: -color-border-strong;
+    -fx-border-width: 1;
+    -fx-padding: 2 4;
+    -fx-font-size: 13px;
+}
+
+.filter-combo .list-cell {
+    -fx-text-fill: -color-text;
+    -fx-padding: 4 8;
+}
+
+/* Botón secundario (Refrescar): claro, no primario */
+.button-secondary {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-text;
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: -color-border-strong;
+    -fx-border-width: 1;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+.button-secondary:hover {
+    -fx-background-color: -color-surface-alt;
+    -fx-border-color: -color-primary;
+    -fx-text-fill: -color-primary;
+}
+
+.button-secondary:disabled {
+    -fx-opacity: 0.6;
+}
+
+.status-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-text-secondary;
+}
+
+/* ===================== Botones de acción (escritura) ==================== */
+/* Botón primario: acción principal (Nuevo paciente, Crear cita, Guardar). */
+.button-primary {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-on-primary;
+    -fx-background-color: -color-primary;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+.button-primary:hover {
+    -fx-background-color: -color-primary-hover;
+}
+
+.button-primary:disabled {
+    -fx-opacity: 0.6;
+}
+
+/* Botón de peligro: acciones destructivas (Eliminar) fuera de las filas. */
+.button-danger {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-on-primary;
+    -fx-background-color: -color-danger;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+.button-danger:hover {
+    -fx-opacity: 0.9;
+}
+
+/* Botones compactos de acción dentro de una fila de tabla. */
+.button-row {
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-primary;
+    -fx-background-color: transparent;
+    -fx-border-color: -color-border-strong;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 3 10;
+    -fx-cursor: hand;
+}
+
+.button-row:hover {
+    -fx-background-color: -color-primary-soft;
+    -fx-border-color: -color-primary;
+}
+
+/* Variante destructiva del botón de fila (Eliminar / Cancelar). */
+.button-row-danger {
+    -fx-text-fill: -color-danger;
+}
+
+.button-row-danger:hover {
+    -fx-background-color: -color-danger-soft;
+    -fx-border-color: -color-danger;
+}
+
+/* ===================== Formularios y diálogos ========================== */
+.app-dialog {
+    -fx-background-color: -color-surface;
+}
+
+/* Contenedor de formulario (VBox con etiquetas y campos). */
+.form-grid {
+    -fx-padding: 4;
+}
+
+.form-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-text-secondary;
+}
+
+.form-field {
+    -fx-font-size: 13px;
+    -fx-padding: 8 10;
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: -color-border-strong;
+    -fx-border-width: 1;
+    -fx-prompt-text-fill: -color-text-muted;
+}
+
+.form-field:focused {
+    -fx-border-color: -color-primary;
+}
+
+/* Texto introductorio de un diálogo (instrucciones). */
+.dialog-intro {
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-text;
+}
+
+/* Nota secundaria de un diálogo (limitaciones, avisos). */
+.dialog-nota {
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-text-secondary;
+}
+
+/* ===================== Spinner y placeholder =========================== */
+.loading-spinner {
+    -fx-progress-color: -color-primary;
+}
+
+.placeholder-box {
+    -fx-padding: 24;
+}
+
+.placeholder-icon {
+    -fx-fill: transparent;
+    -fx-stroke: -color-text-muted;
+    -fx-stroke-width: 2;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+}
+
+.placeholder-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-text-secondary;
+}
+
+.placeholder-detail {
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-text-muted;
+}
+
+/* ==========================================================================
+   TABLA DE CITAS
+   Cabecera limpia, filas de ~44px, sin líneas verticales, hover sutil, fila
+   seleccionada con acento y sin rejilla en las filas vacías.
+   ========================================================================== */
+
+.data-table {
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1;
+    /* Sin líneas verticales entre celdas. */
+    -fx-table-cell-border-color: transparent;
+    -fx-padding: 0;
+}
+
+/* Quita el borde/foco azul por defecto de JavaFX alrededor de la tabla. */
+.data-table:focused {
+    -fx-border-color: -color-border;
+}
+
+/* --- Cabecera --- */
+.data-table .column-header-background {
+    -fx-background-color: -color-surface-alt;
+    -fx-background-radius: 10 10 0 0;
+}
+
+.data-table .column-header,
+.data-table .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent -color-border transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-size: 40px;
+}
+
+.data-table .column-header .label {
+    -fx-text-fill: -color-text-secondary;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0 0 0 4;
+}
+
+/* --- Filas --- */
+.data-table .table-row-cell {
+    -fx-cell-size: 44px;
+    -fx-background-color: -color-surface;
+    /* El borde izquierdo de 3px se reserva SIEMPRE, transparente mientras la
+       fila no está seleccionada. En JavaFX el borde ocupa espacio DENTRO de la
+       región, así que si solo apareciera al seleccionar, el contenido de la
+       fila se desplazaría 3px a la derecha en ese momento. Reservándolo, la
+       selección solo cambia el color y la geometría no varía. */
+    -fx-border-color: transparent transparent -color-border transparent;
+    -fx-border-width: 0 0 1 3;
+}
+
+.data-table .table-row-cell:hover {
+    -fx-background-color: -color-primary-soft;
+}
+
+/* Fila seleccionada, con y sin foco en la tabla. Usamos :filled:selected y,
+   además, la variante bajo :focused para ganar en especificidad a las reglas de
+   Modena (que fuerzan fondo azul y texto blanco). */
+.data-table .table-row-cell:filled:selected,
+.data-table:focused .table-row-cell:filled:selected {
+    -fx-background-color: -color-primary-soft;
+    /* Franja de acento a la izquierda de la fila seleccionada. */
+    -fx-border-color: -color-primary transparent -color-border transparent;
+    -fx-border-width: 0 0 1 3;
+}
+
+/* Color del texto en la fila seleccionada: Modena aplica -fx-selection-bar-text
+   (blanco) sobre .table-cell con un selector muy específico; lo sobreescribimos
+   con uno igual de específico para que el texto siga siendo oscuro y legible
+   sobre nuestro fondo claro. */
+.data-table .table-row-cell:filled:selected .table-cell,
+.data-table:focused .table-row-cell:filled:selected .table-cell {
+    -fx-text-fill: -color-text;
+}
+
+/* Filas vacías: sin rejilla ni fondo, para no ensuciar la zona sin datos. */
+.data-table .table-row-cell:empty {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* --- Celdas --- */
+.data-table .table-cell {
+    -fx-text-fill: -color-text;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0 8;
+    -fx-border-color: transparent;
+    -fx-font-size: 13px;
+}
+
+/* ==========================================================================
+   BADGE DE ESTADO (columna Estado)
+   Etiqueta redondeada con color de fondo suave y texto del color semántico.
+   ========================================================================== */
+
+.badge {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 3 12;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-background-color: -color-border;
+    -fx-text-fill: -color-text-secondary;
+}
+
+.badge-pendiente {
+    -fx-background-color: -color-warning-soft;
+    -fx-text-fill: -color-warning;
+}
+
+.badge-confirmada {
+    -fx-background-color: -color-success-soft;
+    -fx-text-fill: -color-success;
+}
+
+.badge-cancelada {
+    -fx-background-color: -color-danger-soft;
+    -fx-text-fill: -color-danger;
+}

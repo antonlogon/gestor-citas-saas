@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">NexaCita</string>
+    <string name="marca_nombre">NexaCita</string>
+    <string name="login_subtitulo">Accede a tu área de paciente</string>
+    <string name="logo_desc">Logotipo de NexaCita</string>
+    <string name="chat_titulo">Asistente virtual</string>
+    <string name="login_titulo">Iniciar Sesión</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Contraseña</string>
+    <string name="login_boton">Iniciar Sesión</string>
+    <string name="dashboard_titulo">Mis Citas</string>
+    <string name="dashboard_saludo">Hola 👋</string>
+    <string name="dashboard_saludo_formato">Hola, %1$s 👋</string>
+    <string name="dashboard_subtitulo">Tus próximas citas</string>
+    <string name="dashboard_empty">No tienes citas próximas</string>
+    <string name="fab_chat_desc">Abrir asistente virtual</string>
+    <string name="chat_input_hint">Escribe un mensaje…</string>
+    <!-- Bienvenida del asistente. La pinta la app al abrir el chat: es
+         instantánea, no gasta tokens y no puede equivocarse. Enumera lo que
+         el asistente sabe hacer para que el paciente no pida cosas fuera de
+         su alcance. -->
+    <string name="chat_bienvenida">Hola, %1$s 👋\n\nSoy el asistente de la clínica. Puedo consultar tus próximas citas, pedir una nueva, cancelarla o cambiarla de día. ¿Qué necesitas?</string>
+    <string name="chat_bienvenida_sin_nombre">¡Hola! 👋\n\nSoy el asistente de la clínica. Puedo consultar tus próximas citas, pedir una nueva, cancelarla o cambiarla de día. ¿Qué necesitas?</string>
+    <string name="chat_enviar_desc">Enviar mensaje</string>
+    <!-- Sugerencias de la primera pantalla del chat. Son el texto que se
+         envia tal cual al pulsarlas, para que el paciente no tenga que
+         escribir ni adivinar como pedir las cosas. -->
+    <string name="chat_sugerencia_citas">¿Qué citas tengo?</string>
+    <string name="chat_sugerencia_pedir">Quiero pedir una cita</string>
+    <string name="chat_sugerencia_cancelar">Quiero cancelar una cita</string>
+</resources>

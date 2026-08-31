@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Neutros base. Se conservan porque el tema y el FAB referencian @color/white. -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- ==========================================================================
+         SISTEMA DE DISEÑO CLÍNICO (compartido con la app de escritorio, JavaFX).
+         Nombres semánticos (no nombres de color) para que el sentido sobreviva a
+         cualquier reajuste de paleta. Todos los pares texto/fondo validados a
+         WCAG AAA (7:1) salvo el texto tenue, restringido a texto no crítico.
+         ========================================================================== -->
+
+    <!-- Marca / acciones primarias -->
+    <color name="color_primary">#115E6D</color>          <!-- blanco encima: 7.38:1 -->
+    <color name="color_primary_pressed">#0A4A56</color>  <!-- blanco encima: 9.87:1 -->
+    <color name="color_primary_soft">#ECFEFF</color>     <!-- fondos de acento/resaltados -->
+    <color name="color_surface_dark">#0B3A44</color>     <!-- cabeceras, barra de estado -->
+
+    <!-- Superficies y fondo -->
+    <color name="color_background">#F5F7FA</color>       <!-- fondo de app -->
+    <color name="color_surface">#FFFFFF</color>          <!-- tarjetas/superficies -->
+    <color name="color_border">#E2E8F0</color>           <!-- bordes suaves -->
+
+    <!-- Texto -->
+    <color name="color_text_primary">#0F172A</color>     <!-- 17.85:1 -->
+    <color name="color_text_secondary">#475569</color>   <!-- 7.58:1 sobre blanco; 7.06:1 sobre fondo -->
+    <color name="color_text_muted">#64748B</color>       <!-- 4.76:1: SOLO sobre blanco y texto no crítico -->
+    <color name="color_on_primary">#FFFFFF</color>       <!-- texto/icono sobre el primario -->
+
+    <!-- Badges de estado (fondo suave + texto oscuro a juego, todos ~8.2:1) -->
+    <color name="estado_confirmada_bg">#DCFCE7</color>
+    <color name="estado_confirmada_text">#14532D</color> <!-- 8.30:1 -->
+    <color name="estado_pendiente_bg">#FEF3C7</color>
+    <color name="estado_pendiente_text">#78350F</color>  <!-- 8.15:1 -->
+    <color name="estado_cancelada_bg">#FEE2E2</color>
+    <color name="estado_cancelada_text">#7F1D1D</color>  <!-- 8.20:1 -->
+
+    <!-- Burbujas del chat (extraídas de los drawables para no dejar hex sueltos).
+         La de la IA reutiliza el borde neutro; la del usuario, el acento suave. -->
+    <color name="chat_bubble_ai">#E2E8F0</color>         <!-- = color_border -->
+    <color name="chat_bubble_user">#ECFEFF</color>       <!-- = color_primary_soft -->
+</resources>
